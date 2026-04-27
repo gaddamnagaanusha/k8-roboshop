@@ -40,6 +40,28 @@ spec:
       containers:
       - name: catalogue
         image: dockerlearn255/catalogue:1.0.0
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+             memory: "128Mi"
+             cpu: "100m"
+        readinessProbe:
+          # httpGet:
+          #   path: /health
+          #   port: 8080
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 5 # how many seconds to wait before starting the probe
+          failureThreshold: 2  # how many times to retry before considering the container unhealthy
+          periodSeconds: 10  # how many seconds to wait before next probe
+        livenessProbe:
+          httpGet:  
+            path: /health
+            port: 8080
+            periodSeconds: 10
+            failureThreshold: 2  
         envFrom:
         - configMapRef:
             name: catalogue
