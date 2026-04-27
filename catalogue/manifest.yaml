@@ -60,8 +60,8 @@ spec:
           httpGet:  
             path: /health
             port: 8080
-            periodSeconds: 10
-            failureThreshold: 2  
+          failureThreshold: 2
+          periodSeconds: 10  
         envFrom:
         - configMapRef:
             name: catalogue
