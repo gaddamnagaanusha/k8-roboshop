@@ -9,5 +9,7 @@
 * export PATH=~/.kubectx:$PATH
 * EOF
 
-* curl -sS https://webinstall.dev/k9s | bash
-* Shift+:
+* curl -sS https://webinstall.dev/k9s | bash   #imp
+* enter l -> to check logs
+* esc -> to come to back
+* Shift+: -> to serach for something
