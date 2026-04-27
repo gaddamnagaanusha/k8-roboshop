@@ -40,7 +40,7 @@ spec:
       containers:
       - name: catalogue
         image: dockerlearn255/catalogue:1.0.0
-        envfrom:
+        envFrom:
         - configMapRef:
             name: catalogue
 
